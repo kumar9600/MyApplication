@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="long_text">Android lets your application connect to the internet or any other local network and allows you to perform network operations.
+
+A device can have various types of network connections. If your app needs internet connection to make HTTP Requests and or you need internet connection in your whole app then it is better to check internet connectivity status before making any HTTP Requests to avoid http exceptions.
+    Before you perform any network operations, you must first check that are you connected to that network or internet. For this android provides ConnectivityManager class.
+    Apart from this connected states, there are other states a network can achieve. They are listed below:
+
+Connecting.
+Disconnected.
+Disconnecting.
+Suspended.
+Unknown.
+Now, since we are using Broadcast Receiver to detect the internet connection then we should know about Broadcast Receiver.
+
+Broadcast Receivers simply respond to broadcast messages from other applications or from the system itself. These messages are sometime called events or intents. For example, applications can also initiate broadcasts to let other applications know that some data has been downloaded to the device and is available for them to use, so this is broadcast receiver who will intercept this communication and will initiate appropriate action.</string>
+</resources>

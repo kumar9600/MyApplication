@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import ara.com.myapplication.Util.Utils;
+import ara.com.myapplication.receiver.MyBroadcastReceiver;
 import ara.com.myapplication.service.MyService;
 import ara.com.myapplication.R;
 
@@ -26,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeViews() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
         btnStartService = (Button) findViewById(R.id.startService);
         btnStopService = (Button) findViewById(R.id.stopService);
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         btnCheckNetworkConnection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //manually check internet connection
+                MyBroadcastReceiver broadcastReceiver = new MyBroadcastReceiver();
+                broadcastReceiver.checkConnectivity(MainActivity.this);
             }
         });
     }

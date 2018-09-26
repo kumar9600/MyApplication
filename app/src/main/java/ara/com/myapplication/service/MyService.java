@@ -8,10 +8,12 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import ara.com.myapplication.Util.Utils;
+
 public class MyService extends Service {
 
     private static final String TAG = "MyService";
-    private MediaPlayer player;
+//    private MediaPlayer player;
 
     public MyService() {
     }
@@ -23,19 +25,19 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "Service Started", Toast.LENGTH_SHORT).show();
+        Utils.showToast(this,"Service started");
         Log.e(TAG, "Service started");
-        player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
+        /* player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
         player.setLooping(true);
-        player.start();
+        player.start();*/
         return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "Service Destroyed", Toast.LENGTH_SHORT).show();
+        Utils.showToast(this,"Service stopped");
         Log.e(TAG, "Service stopped");
-        player.stop();
+       /* player.stop();*/
     }
 }
